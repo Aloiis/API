@@ -5,4 +5,6 @@ const app = express()
 
 app.listen('3000')
 
-app.route('/').get((req,res)=> res.send("Hello"))
+app.use(express.json())
+
+app.route('/').post( (req,res)=> res.send(req.body))
